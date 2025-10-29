@@ -50,7 +50,7 @@
                                 <form action="{{ route('products.leveringsInfo', $product->Id) }}" method="POST">
                                     @csrf
                                     @method('GET')
-                                    <button type="submit" class="btn btn-success btn-sm">Leverings Info</button>
+                                    <button type="submit" class="btn btn-success btn-sm">Leverantie Info</button>
                                 </form>
                             </td>
 

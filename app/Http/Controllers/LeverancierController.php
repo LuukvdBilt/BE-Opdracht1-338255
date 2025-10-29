@@ -9,71 +9,24 @@ use Illuminate\Http\Request;
 
 class LeverancierController extends Controller
 {
-    private $leverancierModel;
+    private $leverantie;
     public function __construct()
     {
-        $this->leverancierModel = new LeverancierModel();
+        $this->leverantie = new LeverancierModel();
     }
 
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        $leveranciers = $this->leverancierModel->sp_getAllLeveranciers(4);
 
-        return view('leverancier.index',[
-            'title' => 'Leverancier',
-            'message' => 'Welkom bij de leveranciers pagina',
-            'leveranciers' => $leveranciers
+     public function leveringsInfo($productId)
+    {
+        $leverantieInfo = $this->leverantie->getLeverantieInfo($productId);
+
+        $leverancierInfo = $this->leverantie->getLeverancierInfo($productId);
+
+        return view('product.leveringsInfo', [
+            'title' => 'Leverantie Informatie',
+            'leverantieInfo' => $leverantieInfo,
+            'leverancierInfo' => $leverancierInfo
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(LeverancierModel $leverancierModel)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(LeverancierModel $leverancierModel)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, LeverancierModel $leverancierModel)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(LeverancierModel $leverancierModel)
-    {
-        //
-    }
 }

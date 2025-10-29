@@ -16,14 +16,11 @@ Route::get('/',[ProductController::class, 'index'])->name('home');
 
 Route::get('/allergeen', [AllergeenController::class, 'index'])->name('allergeen.index');
 
-//leveranciers index
-
-Route::get('/leverancier', [LeverancierController::class, 'index'])->name('leverancier.index');
 
 
 Route::get('products/allergeenInfo',[ProductController::class, 'allergenenInfo'])->name('products.allergenenInfo');
 
-Route::get('product/{id}/leveringsInfo',[ProductController::class, 'leveringsInfo'])->name('products.leveringsInfo');
+Route::get('product/{id}/leveringsInfo',[LeverancierController::class, 'leveringsInfo'])->name('products.leveringsInfo');
 
 
 

@@ -20,7 +20,7 @@
                     {{ session('success') }}
                     <button type="button" class="btn-close" aria-label="sluiten" data-bs-dismiss="alert"></button>
                 </div>
-                <meta http-equiv="refresh" content="3;url={{ route('products.index') }}">
+                <meta http-equiv="refresh" content="3;url={{ route('home') }}">
             @endif
 
             <!-- Leverancier info als normale tekst boven de tabel -->
@@ -42,7 +42,6 @@
                     <th>Datum Levering</th>
                     <th>Aantal</th>
                     <th>Datum Eerst Volgende Levering</th>
-                    <th>Aantal Aanwezig</th>
                 </thead>
                 <tbody>
                     @forelse ($leverantieInfo as $LTinfo)
@@ -51,7 +50,6 @@
                             <td>{{ $LTinfo->DatumLevering }}</td>
                             <td>{{ $LTinfo->Aantal }}</td>
                             <td>{{ $LTinfo->DatumEerstVolgendeLevering }}</td>
-                            <td>{{ $LTinfo->AantalAanwezig }}</td>
                         </tr>
                     @empty
                         <tr colspan='3'>Geen producten bekend</tr>
