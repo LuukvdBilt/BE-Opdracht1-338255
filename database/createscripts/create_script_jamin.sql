@@ -6,9 +6,9 @@
 -- 01            12-09-2025      Arjan de Ruijter            New Database
 -- **********************************************************************************/
 
-DROP DATABASE IF EXISTS BE_Opdracht_1;
+-- DROP DATABASE IF EXISTS BE_Opdracht_1;
 
-CREATE DATABASE BE_Opdracht_1;
+-- CREATE DATABASE BE_Opdracht_1;
 
 -- Use database laravel
 USE `BE_Opdracht_1`;
@@ -23,10 +23,20 @@ USE `BE_Opdracht_1`;
 -- Drop table Instructeur
 -- Drop table Magazijn
 
+-- tabbellen droppen
+DROP TABLE IF EXISTS Magazijn;
+DROP TABLE IF EXISTS ProductPerAllergeen;
+DROP TABLE IF EXISTS ProductPerLeverancier;
+DROP TABLE IF EXISTS Product;
+DROP TABLE IF EXISTS Leverancier;
+
+
+
+
 CREATE TABLE IF NOT EXISTS Magazijn (
     Id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
     ProductId TINYINT UNSIGNED NOT NULL,
-    VerpakkingsEenheid DECIMAL(4,2) NOT NULL,
+    VerpakkingsEenheid DECIMAL(3,1) NOT NULL,
     AantalAanwezig INT NULL DEFAULT NULL,
     IsActief BIT NOT NULL DEFAULT 1,
     Opmerkingen VARCHAR(250) NULL DEFAULT NULL,
@@ -105,6 +115,7 @@ VALUES
 -- 01            12-09-2025      Arjan de Ruijter            New table
 -- **********************************************************************************/
 
+DROP TABLE IF EXISTS Allergeen;
 
 CREATE TABLE IF NOT EXISTS Allergeen (
     Id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -221,7 +232,6 @@ VALUES
 -- *******       **********      ****************            ******************
 -- 01            12-09-2025      Arjan de Ruijter            New table
 -- **********************************************************************************/
-DROP TABLE IF EXISTS ProductPerLeverancier;
 
 CREATE TABLE IF NOT EXISTS ProductPerLeverancier (
     Id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,

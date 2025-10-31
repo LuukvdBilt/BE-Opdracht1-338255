@@ -10,7 +10,7 @@ BEGIN
     SELECT PROD.Id
 		  ,PROD.Naam
           ,PROD.Barcode
-          ,MAGA.VerpakkingsEenheid
+          ,IF(MOD(MAGA.VerpakkingsEenheid, 1) = 0, FLOOR(MAGA.VerpakkingsEenheid), MAGA.VerpakkingsEenheid) AS VerpakkingsEenheid
           ,MAGA.AantalAanwezig
           
 	FROM Product AS PROD

@@ -9,9 +9,9 @@ CREATE PROCEDURE sp_GetLeverantieInfo (
 )
 BEGIN
     SELECT PROD.Naam
-           ,PPLE.DatumLevering
+           ,DATE_FORMAT(PPLE.DatumLevering, '%d-%m-%Y') AS DatumLevering
            ,PPLE.Aantal
-           ,PPLE.DatumEerstVolgendeLevering
+           ,DATE_FORMAT(PPLE.DatumEerstVolgendeLevering, '%d-%m-%Y') AS DatumEerstVolgendeLevering
            ,MAGA.AantalAanwezig
 
     FROM Product AS PROD
