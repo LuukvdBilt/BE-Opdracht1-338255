@@ -1,3 +1,5 @@
+use BE_Opdracht_1;
+
 DROP PROCEDURE IF EXISTS Sp_GetAllergeenById;
 
 DELIMITER $$
