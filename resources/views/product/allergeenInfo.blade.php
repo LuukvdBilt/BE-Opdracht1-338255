@@ -42,6 +42,7 @@
                     @empty
                         <tr>
                             <td colspan="4">In dit product zitten geen stoffen die een allergische reactie kunnen veroorzaken</td>
+                            <meta http-equiv="refresh" content="4;url={{ route('home') }}">
                         </tr>
                     @endforelse
                 </tbody>

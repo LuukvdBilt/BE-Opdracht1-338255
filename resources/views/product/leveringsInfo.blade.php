@@ -24,7 +24,6 @@
                     <p>Contactpersoon leverancier: {{ $LCinfo->Contactpersoon }}</p>
                     <p>Leverancier nummer: {{ $LCinfo->Leveranciernummer }}</p>
                     <p>Mobiel: {{ $LCinfo->Mobiel }}</p>
-
                 @empty
                     Geen leverancier informatie beschikbaar.
                 @endforelse
