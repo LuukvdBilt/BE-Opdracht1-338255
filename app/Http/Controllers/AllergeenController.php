@@ -23,7 +23,7 @@ class AllergeenController extends Controller
         // var_dump($allergenenInfo, $productenInfo);
 
         return view('product.allergeenInfo', [
-            'title' => 'Allergenen Informatie',
+            'title' => 'Overzicht Allergenen',
             'allergenenInfo' => $allergenenInfo,
             'productenInfo' => $productenInfo
         ]);
