@@ -48,6 +48,7 @@
                         @if($LTinfo->Aantal == 0)
                             <tr>
                                 <td colspan="4">Er is van dit product op dit moment geen voorraad aanwezig, de verwachte eerstvolgende levering is: {{ $LTinfo->DatumEerstVolgendeLevering }}</td>
+                                <meta http-equiv="refresh" content="4;url={{ route('home') }}">
                             </tr>
                         @else
                             <tr>
