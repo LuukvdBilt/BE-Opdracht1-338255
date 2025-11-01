@@ -39,7 +39,7 @@
             <table class="table table-hover table-striped">
                 <thead>
                     <th>Naam</th>
-                    <th>Datum Levering</th>
+                    <th>Datum Laatste Levering</th>
                     <th>Aantal</th>
                     <th>Datum Eerst Volgende Levering</th>
                 </thead>
