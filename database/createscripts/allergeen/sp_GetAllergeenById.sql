@@ -17,7 +17,8 @@ BEGIN
 
     INNER JOIN ProductPerAllergeen AS PPA ON PPA.AllergeenId = ALGE.Id
 
-    WHERE PPA.ProductId = p_productid;
+    WHERE PPA.ProductId = p_productid
+    ORDER BY ALGE.Naam ASC;
     
 END$$
 
