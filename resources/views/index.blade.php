@@ -54,7 +54,6 @@
                     @endforelse
                 </tbody>
             </table>
-          <a class="btn btn-primary" href="{{ route('home') }}">Terug naar het overzicht</a>
         </div>
     </div>
 </body>
