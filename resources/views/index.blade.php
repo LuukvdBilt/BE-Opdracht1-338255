@@ -8,49 +8,49 @@
     <title>Producten</title>
 </head>
 
-<body class="mt-4">
-    <div class="container d-flex justify-content-center ">
+<body class="bg-gray-50 min-h-screen py-8">
+    <div class="max-w-6xl mx-auto px-4">
 
-        <div class="col-md-10">
+        <h1 class="text-4xl font-bold text-gray-800 mb-6 border-b-2 border-gray-300 pb-2">{{ $title }}</h1>
 
-            <h1>{{ $title }}</h1>
-
-            <hr class="my-4"/>
-            
-            <table class="table table-hover table-striped">
-                <thead>
-                    <th>Barcode</th>
-                    <th>Naam</th>
-                    <th>VerpakkingsEenheid</th>
-                    <th>AantalAanwezig</th>
-                    <th>Allergenen Info</th>
-                    <th>Leverantie Info</th>
+        <div class="overflow-x-auto bg-white shadow-md rounded-lg">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-100">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Barcode</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Naam</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">VerpakkingsEenheid</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">AantalAanwezig</th>
+                        <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Allergenen Info</th>
+                        <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Leverantie Info</th>
+                    </tr>
                 </thead>
-                <tbody>
+                <tbody class="bg-white divide-y divide-gray-200">
                     @forelse ($products as $product)
-                        <tr>
-                            <td>{{ $product->Barcode}}</td>
-                            <td>{{ $product->Naam }}</td>
-                            <td>{{ $product->VerpakkingsEenheid}}</td>
-                            <td>{{ $product->AantalAanwezig }}</td>
-                           <td class="text-center">
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-700">{{ $product->Barcode}}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-700">{{ $product->Naam }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-700">{{ $product->VerpakkingsEenheid}}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-700">{{ $product->AantalAanwezig }}</td>
+                            <td class="px-6 py-4 text-center">
                                 <form action="{{ route('products.allergenenInfo', $product->Id) }}" method="POST">
                                     @csrf
                                     @method('GET')
-                                    <button type="submit" class="btn btn-danger btn-sm">Allergenen Info</button>
+                                    <button type="submit" class="bg-red-500 text-white text-sm px-3 py-1 rounded hover:bg-red-600 transition">Allergenen Info</button>
                                 </form>
                             </td>
-                            <td class="text-center">
+                            <td class="px-6 py-4 text-center">
                                 <form action="{{ route('products.leveringsInfo', $product->Id) }}" method="POST">
                                     @csrf
                                     @method('GET')
-                                    <button type="submit" class="btn btn-success btn-sm">Leverantie Info</button>
+                                    <button type="submit" class="bg-blue-500 text-white text-sm px-3 py-1 rounded hover:bg-blue-800 transition-colors duration-150">Leverantie Info</button>
                                 </form>
                             </td>
-
                         </tr>
                     @empty
-                        <tr colspan='3'>Geen producten bekend</tr>
+                        <tr>
+                            <td colspan="6" class="px-6 py-4 text-center text-gray-500">Geen producten bekend</td>
+                        </tr>
                     @endforelse
                 </tbody>
             </table>

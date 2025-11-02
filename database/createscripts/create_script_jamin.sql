@@ -11,7 +11,7 @@
 -- CREATE DATABASE be_opdracht_1;
 
 -- Use database laravel
-USE `be_opdracht_1`;
+USE `backend`;
 
 -- Step: 02
 -- Goal: Create a new table Allergeen

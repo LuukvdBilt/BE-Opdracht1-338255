@@ -1,4 +1,4 @@
-USE BE_Opdracht_1;
+USE backend;
 
 DROP PROCEDURE IF EXISTS sp_GetAllergeenByProductId;
 

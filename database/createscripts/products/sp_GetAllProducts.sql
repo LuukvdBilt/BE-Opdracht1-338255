@@ -1,4 +1,4 @@
-use BE_Opdracht_1;
+use backend;
 
 DROP PROCEDURE IF EXISTS sp_GetAllProducts;
 
